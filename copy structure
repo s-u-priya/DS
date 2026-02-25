@@ -1,0 +1,48 @@
+#include<stdio.h> 
+struct student 
+{ 
+		char name[15]; 
+		int rno; 
+		char gender; 
+}; 
+int main() 
+{ 
+		struct student s1={"Srinu",143,'m'},s2; 
+		s2=s1; 
+		printf("The Student Details are:\n"); 
+	printf("Name:%s\nRno=%d\nGender=%c",s2.name,s2.rno,s2.gender); 	 return 0; 
+} 
+
+
+OUTPUT: 
+The Student Details are: 
+Name: Aditya 
+Rno=143 
+Gender=m 
+  
+Practice 1.3 
+AIM: Write a C Program read student name marks from the command line and display the student details along with total
+DESCRIPTION: 
+Command Line Arguments in C allow users to pass information to a program when executing it from the command line or terminal. These arguments can be accessed inside the main() function via the parameters argc (argument count) and argv (argument vector). 
+PROGRAM: 
+#include<stdio.h> 
+#include<string.h> 
+struct student 
+{ 
+	char name[10]; 
+	int s1,s2,s3,s4,s5; 
+}; 
+int main(int argc,char *argv[]) 
+{ 
+	struct student s; 
+	int total; 
+	strcpy(s.name,argv[1]); 
+	s.s1=atoi(argv[2]); 
+	s.s2=atoi(argv[3]); 
+	s.s3=atoi(argv[4]); 
+	s.s4=atoi(argv[5]); 
+	s.s5=atoi(argv[6]); 
+	total=s.s1+s.s2+s.s3+s.s4+s.s5; 
+	printf("name\ts1\ts2\ts3\ts4\ts5\total\n"); 
+	printf("%s\t%d\t%d\t%d\t%d\t%d\t%d",s.name,s.s1,s.s2,s.s3,s.s4,s.s5,total); 	return 0; 
+} 
